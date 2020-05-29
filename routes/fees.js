@@ -23,9 +23,10 @@ router.route('/bal').post(async (req, res) => {
 
   router.route('/five').post(async (req, res) => {
     const client = Client.forTestnet();
-    client.setOperator(req.body.account, req.body.pk);
+    const amt = 500_000_000
+    client.setOperator(req.body.account, req.body.pk)
     receipt =await( await new CryptoTransferTransaction()
-    .addSender(req.body.account, 500_000_000)
+    .addSender(req.body.account, amt)
     .addRecipient('0.0.49451', 500_000_000)
     .build(client)
     .execute(client))
