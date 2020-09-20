@@ -7,13 +7,13 @@ const cors = require('cors');
 const app = express();
 const port = process.env.PORT || 5000;
 
-//app.use(cors());
+app.use(cors());
 app.use(express.json());
-app.use((req, res, next) => {
-    res.setHeaders('Access-Control-Allow-Origin', '*'),
-      res.setHeaders('Access-Control-Allow-Headers', '*'),
-      next();
-  });
+// app.use((req, res, next) => {
+//     res.setHeaders('Access-Control-Allow-Origin', '*'),
+//       res.setHeaders('Access-Control-Allow-Headers', '*'),
+//       next();
+//   });
 
 //const uri = process.env.ATLAS_URI;
 //mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true});
