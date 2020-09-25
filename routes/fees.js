@@ -12,9 +12,9 @@ router.route('/test').get(async (req, res) => {
 });
 
 router.route('/bal').post(async (req, res) => {
-  console.log(req.body);
-  const client = Client.forTestnet();
-  client.setOperator(req.body.account, req.body.pk);
+  // console.log(req.body);
+  // const client = Client.forTestnet();
+  // client.setOperator(req.body.account, req.body.pk);
   const balance = await new AccountBalanceQuery()
     .setAccountId(req.body.account)
     .execute(HederaClient)
@@ -25,12 +25,13 @@ router.route('/bal').post(async (req, res) => {
 });
 
 router.route('/five').post(async (req, res) => {
+  console.log(req.body);
   const client = Client.forTestnet();
   client.setOperator(req.body.account, req.body.pk);
   receipt = await (
     await new CryptoTransferTransaction()
-      .addSender(req.body.account, 500000000)
-      .addRecipient('0.0.49451', 500000000)
+      .addSender(req.body.account, 5000000)
+      .addRecipient('0.0.3402', 5000000)
       .build(client)
       .execute(client)
   ).getReceipt(client);
