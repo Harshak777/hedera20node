@@ -30,8 +30,8 @@ router.route('/five').post(async (req, res) => {
   client.setOperator(req.body.account, req.body.pk);
   receipt = await (
     await new CryptoTransferTransaction()
-      .addSender(req.body.account, 5000000)
-      .addRecipient('0.0.3402', 5000000)
+      .addSender(req.body.account, 500000000)
+      .addRecipient('0.0.3402', 500000000)
       .build(client)
       .execute(client)
   ).getReceipt(client);
