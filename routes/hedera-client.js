@@ -1,8 +1,8 @@
 require('dotenv').config();
 const { Client } = require('@hashgraph/sdk');
 
-const myAccountId = "0.0.3402";
-const myPrivateKey = "302e020100300506032b657004220420b91c5e36c32720239d94ff10aebe2903ef33e3a0cf9e6b05b76108823a4ca1f4";
+const myAccountId = "0.0.59314";
+const myPrivateKey = "302e020100300506032b65700422042089373c17a111b76bf0c52f952cf8d1ee0b8370148f7e249eb52ba27b005fdace";
 
 //If we weren't able to grab it, we should throw a new error
 if (myAccountId == null ||
